@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { MyButton } from "../UI/button"
 import cn from "./style.module.css"
 
 export const Auth = () => {
@@ -16,7 +17,7 @@ export const Auth = () => {
           <div>Введите пароль</div>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <button>Войти</button>
+        <MyButton>Войти</MyButton>
       </form>
     </div>
   )

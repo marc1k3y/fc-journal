@@ -1,0 +1,44 @@
+.createFormWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.createFormWrapper>form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.createFormWrapper>form>div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px gray;
+}
+
+.createFormWrapper>form>div input {
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: 2px solid gray;
+}
+
+.age>input {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.createFormWrapper>form button {
+  margin-left: auto;
+  margin-right: auto;
+}
