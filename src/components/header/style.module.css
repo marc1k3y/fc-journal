@@ -1,0 +1,13 @@
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: whitesmoke;
+  padding: 0 20px;
+}

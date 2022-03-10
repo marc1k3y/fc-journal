@@ -1,0 +1,35 @@
+.authWrapper {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.authWrapper>div {
+  font-size: 24px;
+  text-align: center;
+}
+
+.authWrapper>form {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  padding: 20px 30px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 15px gray;
+  gap: 15px;
+}
+
+.authWrapper>form input {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 2px solid gray;
+}
+
+.authWrapper>form button {
+  background-color: #0032A0;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 35px;
+  border: none;
+}
