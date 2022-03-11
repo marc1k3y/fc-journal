@@ -2,5 +2,68 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 20px;
+}
+
+.spman {
+  display: flex;
+  align-items: center;
+  border: 2px solid gray;
   padding: 10px;
+  border-radius: 10px;
+}
+
+.infoMedals {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.medals {
+  display: flex;
+  gap: 10px;
+}
+
+.medals>div {
+  position: relative;
+}
+
+.medals img {
+  width: 25px;
+}
+
+.medals>div>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background-color: lightgray;
+  height: 15px;
+  width: 15px;
+  font-size: 12px;
+  border-radius: 50%;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  background-color: gold;
+  border-radius: 50%;
+  padding: 5px 10px;
+}
+
+.addBtn {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .infoMedals {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }
