@@ -1,0 +1,12 @@
+.medalsFormWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.constructor {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
