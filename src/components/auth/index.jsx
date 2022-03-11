@@ -2,6 +2,7 @@ import cn from "./style.module.css"
 import { useState } from "react"
 import axios from "axios"
 import { MyButton } from "../UI/button"
+import { api } from "../../constants"
 
 export const Auth = ({ setIsAuth }) => {
   const [login, setLogin] = useState("")
@@ -9,7 +10,7 @@ export const Auth = ({ setIsAuth }) => {
 
   function log(e) {
     e.preventDefault()
-    axios.post("http://192.168.0.23:4000/api/trainer/login", {
+    axios.post(`${api}trainer/login`, {
       login, password
     })
       .then((res) => {
