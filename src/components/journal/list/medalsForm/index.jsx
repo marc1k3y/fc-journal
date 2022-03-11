@@ -4,7 +4,7 @@ import axios from "axios"
 import { api } from "../../../../constants"
 import { MyButton } from "../../../UI/button"
 
-export const MedalsForm = (id) => {
+export const MedalsForm = ({ id }) => {
   const [medal, setMedal] = useState("gold")
   const [info, setInfo] = useState("")
   const [medals, setMedals] = useState({
@@ -14,7 +14,6 @@ export const MedalsForm = (id) => {
   })
 
   function add() {
-    console.log(medal);
     switch (medal) {
       case "gold":
         setMedals({ ...medals, gold: [...medals.gold, info] })
@@ -31,9 +30,7 @@ export const MedalsForm = (id) => {
   }
 
   function pushMedals() {
-    axios.put(`${api}spman/medals`, {
-      id, medals
-    })
+    axios.put(`${api}spman/medals?id=${id}`, { medals })
       .then((res) => console.log(res))
   }
   return (
@@ -48,6 +45,23 @@ export const MedalsForm = (id) => {
           <input type="text" value={info} onChange={(e) => setInfo(e.target.value)} />
         </div>
         <MyButton click={add}>Добавить</MyButton>
+      </div>
+      <div className={cn.addedMedals}>
+        {medals.gold.length > 0 &&
+          <div className={cn.medals}>
+            <div className={cn.title}>Золото</div>
+            {medals.gold?.map((gm, index) => <div key={index}>{++index}. {gm}</div>)}
+          </div>}
+        {medals.silver.length > 0 &&
+          <div className={cn.medals}>
+            <div className={cn.title}>Серебро</div>
+            {medals.silver?.map((sm, index) => <div key={index}>{++index}. {sm}</div>)}
+          </div>}
+        {medals.bronze.length > 0 &&
+          <div className={cn.medals}>
+            <div className={cn.title}>Бронза</div>
+            {medals.bronze?.map((bm, index) => <div key={index}>{++index}. {bm}</div>)}
+          </div>}
       </div>
       <MyButton click={pushMedals}>Сохранить</MyButton>
     </div>

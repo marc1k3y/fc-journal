@@ -7,6 +7,27 @@
 .constructor {
   margin-top: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+.addedMedals {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.medals {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px gray;
+}
+
+.title {
+  text-align: center;
 }

@@ -12,6 +12,12 @@ import { MedalsForm } from "./medalsForm"
 export const List = () => {
   const [spmans, setSpmans] = useState([])
   const [modal, setModal] = useState(false)
+  const [currentId, setCurrentId] = useState(null)
+
+  function addMedalsBtn(id) {
+    setCurrentId(id)
+    setModal(true)
+  }
 
   useEffect(() => {
     axios.get(`${api}spman/all`)
@@ -48,12 +54,12 @@ export const List = () => {
           </div>
           <div className={cn.addBtn}>
             <MyButton
-              click={() => setModal(true)}>
+              click={() => addMedalsBtn(spman._id)}>
               Медали
             </MyButton>
           </div>
           <Modal visible={modal} close={setModal}>
-            <MedalsForm id={spman._id} />
+            <MedalsForm id={currentId} />
           </Modal>
         </div>)}
     </div>
