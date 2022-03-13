@@ -7,6 +7,7 @@ import cn from "./style.module.css"
 
 export const Journal = () => {
   const [modal, setModal] = useState(false)
+  const [query, setQuery] = useState("")
   return (
     <div className={cn.journalWrapper}>
       <div className={cn.title}>Журнал спортсменов</div>
@@ -19,10 +20,10 @@ export const Journal = () => {
           </div>
           <div className={cn.seacrh}>
             <div>поиск</div>
-            <input type="text" />
+            <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
           </div>
         </div>
-        <List />
+        <List query={query} />
       </div>
       <Modal visible={modal} close={setModal}>
         <CreateForm />

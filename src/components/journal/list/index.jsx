@@ -9,7 +9,7 @@ import silver from "../../../assets/silver.svg"
 import bronze from "../../../assets/bronze.svg"
 import { MedalsForm } from "./medalsForm"
 
-export const List = () => {
+export const List = ({query}) => {
   const [spmans, setSpmans] = useState([])
   const [modal, setModal] = useState(false)
   const [currentId, setCurrentId] = useState(null)
@@ -27,7 +27,7 @@ export const List = () => {
   }, [])
   return (
     <div className={cn.listWrapper}>
-      {spmans.map(spman =>
+      {spmans.filter(spman => spman.name.toLowerCase().includes(query)).map(spman =>
         <div key={spman._id} className={cn.spman}>
           <div className={cn.infoMedals}>
             <div className={cn.spmanInfo}>
