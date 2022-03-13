@@ -5,6 +5,7 @@ import { Auth } from "./components/auth"
 import { Header } from "./components/header"
 import { Journal } from "./components/journal"
 import { api } from "./constants"
+import { Loader } from "./components/UI/loader"
 
 function App() {
   const id = localStorage.getItem("id")
@@ -18,7 +19,7 @@ function App() {
       .finally(() => setLoading(false))
   }, [id])
 
-  if (loading) return <h1>Загрузка..</h1>
+  if (loading) return <Loader />
 
   return (
     <div className="App">

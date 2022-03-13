@@ -51,6 +51,7 @@ export const MedalsForm = ({ id, close }) => {
           <option value="bronze">бронза</option>
         </select>
         <div className={cn.info}>
+          <div>Описание</div>
           <input type="text" value={info} onChange={(e) => setInfo(e.target.value)} />
         </div>
         <MyButton click={add}>Добавить</MyButton>

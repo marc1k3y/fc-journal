@@ -34,7 +34,7 @@ export const List = ({ query, create }) => {
       })
   }, [loading, modal, create])
 
-  if (loading) return <h1>Загрузка..</h1>
+  if (loading) return <h3>Не суети</h3>
 
   return (
     <div className={cn.listWrapper}>

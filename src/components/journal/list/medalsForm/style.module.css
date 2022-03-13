@@ -10,6 +10,30 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  border: 2px solid gray;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.constructor>select {
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: transparent;
+}
+
+.constructor input {
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 2px solid gray;
+}
+
+.info {
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.info>div {
+  text-align: center;
 }
 
 .addedMedals {
