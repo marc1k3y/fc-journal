@@ -33,7 +33,14 @@ export const MedalsForm = ({ id, close }) => {
   function pushMedals() {
     axios.put(`${api}spman/medals?id=${id}`, { medals })
       .then((res) => console.log(res))
-      .finally(() => close(false))
+      .finally(() => {
+        close(false)
+        setMedals({
+          gold: [],
+          silver: [],
+          bronze: []
+        })
+      })
   }
   return (
     <div className={cn.medalsFormWrapper}>
