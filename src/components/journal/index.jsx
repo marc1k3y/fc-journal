@@ -23,10 +23,10 @@ export const Journal = () => {
             <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
           </div>
         </div>
-        <List query={query} />
+        <List query={query} create={modal} />
       </div>
       <Modal visible={modal} close={setModal}>
-        <CreateForm />
+        <CreateForm close={setModal} />
       </Modal>
     </div>
   )

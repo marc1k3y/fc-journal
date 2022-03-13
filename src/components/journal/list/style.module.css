@@ -11,6 +11,19 @@
   border: 2px solid gray;
   padding: 10px;
   border-radius: 10px;
+  position: relative;
+}
+
+.deleteBtn {
+  position: absolute;
+  right: 10px;
+  top: 3px;
+}
+
+.deleteBtn>button {
+  background-color: transparent;
+  border: none;
+  color: gray;
 }
 
 .infoMedals {

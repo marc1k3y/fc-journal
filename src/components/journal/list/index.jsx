@@ -9,7 +9,8 @@ import silver from "../../../assets/silver.svg"
 import bronze from "../../../assets/bronze.svg"
 import { MedalsForm } from "./medalsForm"
 
-export const List = ({query}) => {
+export const List = ({ query, create }) => {
+  const [loading, setLoading] = useState(false)
   const [spmans, setSpmans] = useState([])
   const [modal, setModal] = useState(false)
   const [currentId, setCurrentId] = useState(null)
@@ -19,16 +20,31 @@ export const List = ({query}) => {
     setModal(true)
   }
 
+  function deleteSpman(id) {
+    setLoading(true)
+    axios.delete(`${api}spman/delete?id=${id}`)
+      .then((res) => console.log(res.data))
+      .finally(() => setLoading(false))
+  }
+
   useEffect(() => {
     axios.get(`${api}spman/all`)
       .then((res) => {
         setSpmans(res.data)
       })
-  }, [])
+  }, [loading, modal, create])
+
+  if (loading) return <h1>Загрузка..</h1>
+
   return (
     <div className={cn.listWrapper}>
       {spmans.filter(spman => spman.name.toLowerCase().includes(query)).map(spman =>
         <div key={spman._id} className={cn.spman}>
+          <div className={cn.deleteBtn}>
+            <button onClick={() => deleteSpman(spman._id)}>
+              уволить
+            </button>
+          </div>
           <div className={cn.infoMedals}>
             <div className={cn.spmanInfo}>
               <div className={cn.name}>{spman.name}</div>
@@ -59,7 +75,7 @@ export const List = ({query}) => {
             </MyButton>
           </div>
           <Modal visible={modal} close={setModal}>
-            <MedalsForm id={currentId} />
+            <MedalsForm id={currentId} close={setModal} />
           </Modal>
         </div>)}
     </div>

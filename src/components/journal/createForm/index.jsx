@@ -4,7 +4,7 @@ import { useState } from "react"
 import { api } from "../../../constants"
 import { MyButton } from "../../UI/button"
 
-export const CreateForm = () => {
+export const CreateForm = ({ close }) => {
   const [name, setName] = useState("")
   const [age, setAge] = useState(0)
 
@@ -14,6 +14,11 @@ export const CreateForm = () => {
       name, age
     })
       .then((res) => console.log(res.data))
+      .finally(() => {
+        close(false)
+        setName("")
+        setAge(0)
+      })
   }
   return (
     <div className={cn.createFormWrapper}>

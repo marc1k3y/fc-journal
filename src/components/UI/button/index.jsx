@@ -1,7 +1,9 @@
-import "./style.module.css"
+import cn from "./style.module.css"
 
 export const MyButton = ({ click, children }) => {
   return (
-    <button onClick={click}>{children}</button>
+    <div className={cn.wrapper}>
+      <button onClick={click}>{children}</button>
+    </div>
   )
 }

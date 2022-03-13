@@ -4,7 +4,7 @@ import axios from "axios"
 import { api } from "../../../../constants"
 import { MyButton } from "../../../UI/button"
 
-export const MedalsForm = ({ id }) => {
+export const MedalsForm = ({ id, close }) => {
   const [medal, setMedal] = useState("gold")
   const [info, setInfo] = useState("")
   const [medals, setMedals] = useState({
@@ -27,11 +27,13 @@ export const MedalsForm = ({ id }) => {
       default:
         break
     }
+    setInfo("")
   }
 
   function pushMedals() {
     axios.put(`${api}spman/medals?id=${id}`, { medals })
       .then((res) => console.log(res))
+      .finally(() => close(false))
   }
   return (
     <div className={cn.medalsFormWrapper}>
